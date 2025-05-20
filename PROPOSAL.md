@@ -16,5 +16,5 @@ names here.(CHANGE THIS!!!!!)
   [Chess.com](https://www.chess.com/)
   [Tank Trouble](https://tanktrouble.com/)
 
-3 Clone of Solitare
-  Scope: This will be a literal copy of Google's [Solitare] (https://g.co/kgs/bo5NmRm)
+3 Clone of Solitaire
+  Scope: This will be a literal copy of Google's [Solitare](https://g.co/kgs/bo5NmRm)
