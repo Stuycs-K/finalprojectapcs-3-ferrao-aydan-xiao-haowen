@@ -2,7 +2,7 @@
 
 ## Group Members:
 
-names here.(CHANGE THIS!!!!!)
+Aydan Ferrao and Haowen Xiao
 
 # IDEAS:
 
