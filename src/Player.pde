@@ -10,6 +10,13 @@ public class Player {
     y = ycor;
   }
   
+  public void displayPlayer() {
+    
+  }
+  
+  public void animate() {
+    
+  }
   
   
 }
