@@ -1,6 +1,7 @@
+float gravity = 0.5;
 public class Player {
-  double x;
-  double y;
+  float x;
+  float y;
   double dx = 0;
   double dy = 0;
   int health = 100;
@@ -11,11 +12,16 @@ public class Player {
   }
   
   public void displayPlayer() {
+    ellipse(x, y, 10, 10);
+    x += dx;
+    y += dy;
+    if (y != (height - 10)) {
+      dy += gravity;
+    }
     
   }
   
   public void animate() {
-    
   }
   
   
