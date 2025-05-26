@@ -8,14 +8,14 @@ void setup() {
 void draw() {
   background(255);
   object.displayPlayer();
+  textSize(20);
+  fill(0);
+  text("(" + object.x + ", " + object.y + ")", 100, 100);
 }
 
 void keyPressed() {
   if(key == 'w') {
-      object.dy = -5;
-  }
-  if(key == 's') {
-      object.dy = 5;
+      object.dy = -10;
   }
   if(key == 'a') {
       object.dx = -5;
@@ -27,9 +27,6 @@ void keyPressed() {
 
 void keyReleased() {
   if(key == 'w') {
-      object.dy = 0;
-  }
-  if(key == 's') {
       object.dy = 0;
   }
   if(key == 'a') {
