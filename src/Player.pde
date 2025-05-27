@@ -12,7 +12,7 @@ public class Player {
   }
   
   public void displayPlayer() {
-    fill(255, 0, 0);
+    fill(100, 100, 255);
     ellipse(x, y, 50, 50);
     fill(0);
     if(dx > 0) {
@@ -34,11 +34,7 @@ public class Player {
     }
     else {
       dy = 0;
-    }
-    
-  }
-  
-  public void animate() {
+    }  
   }
   
   
