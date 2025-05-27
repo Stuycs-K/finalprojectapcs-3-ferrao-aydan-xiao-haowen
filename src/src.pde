@@ -1,5 +1,6 @@
 Player object = new Player(300, 300);
 ArrayList<Platform> platformList = new ArrayList<Platform>();
+Camera objectCamera = new Camera(object, platformList);
 
 void setup() {
   size(600, 600);
@@ -11,6 +12,7 @@ void setup() {
 void draw() {
   background(255);
   object.displayPlayer();
+  objectCamera.moveCamera();
   for (Platform e : platformList) {
     e.displayPlatform();
     e.checkCollision(object);
@@ -19,6 +21,7 @@ void draw() {
   textSize(20);
   fill(0);
   text("(" + object.x + ", " + object.y + ")", 100, 100);
+  text("" + objectCamera.currentLeft + " " + objectCamera.currentRight, 100, 140);
   if (object.x >= 500) {
    translate(5, 0);
   }
@@ -30,9 +33,11 @@ void keyPressed() {
   }
   if(key == 'a') {
       object.dx = -5;
+      object.movingLeft = true;
   }
   if(key == 'd') {
       object.dx = 5;
+      object.movingRight = true;
   }
 }
 
@@ -42,8 +47,10 @@ void keyReleased() {
   }
   if(key == 'a') {
       object.dx = 0;
+      object.movingLeft = false;
   }
   if(key == 'd') {
       object.dx = 0;
+      object.movingRight = false;
   }
 }
