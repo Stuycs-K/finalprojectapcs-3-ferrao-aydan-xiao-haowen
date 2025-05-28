@@ -5,6 +5,6 @@ public abstract class Level {
     return platformList;
   }
   
-  public abstract boolean end();
+  public abstract boolean end(); 
   public abstract void createLevel();
 }
