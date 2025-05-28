@@ -23,9 +23,9 @@ public class Platform {
 
     if (
       playerBottom + p.dy >= y &&
-      playerBottom <= y + yLength &&    
+      playerBottom <= y + yLength - 10 &&    
       playerRight > x &&         
-      playerLeft < x + xLength &&
+      playerLeft < x + xLength - 10 &&
       p.dy >= 0            
     ) {
       p.y = y - 25; 

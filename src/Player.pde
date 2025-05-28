@@ -4,6 +4,8 @@ public class Player {
   float y;
   double dx = 0;
   double dy = 0;
+  boolean movingRight = false;
+  boolean movingLeft = false;
   int health = 100;
   
   public Player(int xcor, int ycor) {
@@ -29,12 +31,13 @@ public class Player {
     }
     x += dx;
     y += dy;
-    if (y <= (height - 60)) {
-      dy += gravity;
+    dy += gravity;
+    if (x <=50) {
+      x = 50;
     }
-    else {
-      dy = 0;
-    }  
+    if (x >=550) {
+      x = 550;
+    }
   }
   
   
