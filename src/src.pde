@@ -7,6 +7,7 @@ void setup() {
   background(255);
   platformList.add(new Platform(10, 500, 100, 10));
   platformList.add(new Platform(700, 500, 100, 10));
+  platformList.add(new Platform(-100,  590, 10000, 10));
 }
 
 void draw() {
@@ -17,18 +18,16 @@ void draw() {
     e.displayPlatform();
     e.checkCollision(object);
   }
-  
   textSize(20);
   fill(0);
   text("(" + object.x + ", " + object.y + ")", 100, 100);
-  text("" + objectCamera.currentLeft + " " + objectCamera.currentRight, 100, 140);
   if (object.x >= 500) {
    translate(5, 0);
   }
 }
 
 void keyPressed() {
-  if(key == 'w') {
+  if(key == 'w' && object.dy == 0) {
       object.dy = -10;
   }
   if(key == 'a') {
@@ -42,9 +41,6 @@ void keyPressed() {
 }
 
 void keyReleased() {
-  if(key == 'w') {
-      object.dy = 0;
-  }
   if(key == 'a') {
       object.dx = 0;
       object.movingLeft = false;

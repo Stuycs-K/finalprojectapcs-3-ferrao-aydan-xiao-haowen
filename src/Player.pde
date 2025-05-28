@@ -31,12 +31,7 @@ public class Player {
     }
     x += dx;
     y += dy;
-    if (y <= (height - 60)) {
-      dy += gravity;
-    }
-    else {
-      dy = 0;
-    }
+    dy += gravity;
     if (x <=50) {
       x = 50;
     }
