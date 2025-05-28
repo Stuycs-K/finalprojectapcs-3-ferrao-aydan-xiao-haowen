@@ -17,3 +17,6 @@ Made more files that we can work on later
 Spent the first few minutes of the period dealing with merge errors but figured it out
 Helped code Killplatform which extends platform which is basically a platform/hole that kills the player and reset the level
 It extends platform
+
+### 2025-05-28 - Level Design
+Didn't do coding today but designed all of the levels for us to put into the levels. Helped Aydan code the levels by pair programming.
