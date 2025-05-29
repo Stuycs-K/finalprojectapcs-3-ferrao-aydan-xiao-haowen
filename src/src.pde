@@ -1,23 +1,18 @@
 Player object = new Player(300, 300);
-ArrayList<Platform> platformList = new ArrayList<Platform>();
-Camera objectCamera = new Camera(object, platformList);
+Level1 test = new Level1(object);
+Camera objectCamera = new Camera(object, test.platformList);
 
 void setup() {
   size(600, 600);
   background(255);
-  platformList.add(new Platform(10, 500, 100, 10));
-  platformList.add(new Platform(700, 500, 100, 10));
-  platformList.add(new Platform(-100,  590, 10000, 10));
 }
 
 void draw() {
+  if 
   background(255);
   object.displayPlayer();
   objectCamera.moveCamera();
-  for (Platform e : platformList) {
-    e.displayPlatform();
-    e.checkCollision(object);
-  }
+  test.updateLevel();
   textSize(20);
   fill(0);
   text("(" + object.x + ", " + object.y + ")", 100, 100);

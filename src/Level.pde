@@ -1,10 +1,21 @@
 public abstract class Level {
   ArrayList<Platform> platformList = new ArrayList<Platform>();
+  ArrayList<KillPlatform> kilList = new ArrayList<KillPlatform>();
+  EndPlatform end;
+  Player object;
   
   public ArrayList<Platform> getList() {
     return platformList;
   }
   
-  public abstract boolean end(); 
-  public abstract void createLevel();
+  public boolean end() {
+    return end.completed;
+  }
+  public void updateLevel() {
+    for (Platform e : platformList) {
+      e.displayPlatform();
+      e.checkCollision(object);
+    }
+  }
+  public abstract void reset();
 }
