@@ -8,7 +8,10 @@ void setup() {
 }
 
 void draw() {
-  if 
+  if (test.createLevel) {
+    test.reset();
+    test.createLevel = false;
+  }
   background(255);
   object.displayPlayer();
   objectCamera.moveCamera();
