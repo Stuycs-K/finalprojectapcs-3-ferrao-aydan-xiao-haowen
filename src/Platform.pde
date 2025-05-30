@@ -3,7 +3,8 @@ public class Platform {
   float y;
   float xLength;
   float yLength;
-  
+  boolean normal = true;
+  boolean collided = false;
   public Platform(float x, float y, float xLength, float yLength) {
     this.x = x;
     this.y = y;

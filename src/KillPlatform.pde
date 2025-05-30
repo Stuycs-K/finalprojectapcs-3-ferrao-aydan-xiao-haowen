@@ -4,7 +4,7 @@ public class KillPlatform extends Platform {
   float xLength;
   float yLength;
   boolean collided = false;
-  
+  boolean normal = false;
   public KillPlatform(float x, float y, float xLength, float yLength) {
     super(x, y, xLength, yLength);
   }

@@ -8,6 +8,7 @@ public class Camera {
     object = a;
     bigList = list;
   }
+
   
   public void moveCamera() {
     float originalX = object.x;
