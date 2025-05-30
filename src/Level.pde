@@ -16,6 +16,13 @@ public abstract class Level {
       e.displayPlatform();
       e.checkCollision(object);
     }
+    for(KillPlatform e : killList) {
+      e.displayPlatform();
+      e.checkCollision();
+      if (e.collided) {
+        this.reset();
+      }
+    }
   }
   public abstract void reset();
 }
