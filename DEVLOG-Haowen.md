@@ -21,3 +21,6 @@ It extends platform
 
 ### 2025-05-28 - Level Design
 Didn't do coding today but designed all of the levels for us to put into the levels. Helped Aydan code the levels by pair programming.
+
+### 2025-05-29 - Pair Programming
+We did a lot of pair programming today and got a lot of stuff done, will need to design more levels at home.
