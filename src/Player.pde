@@ -7,10 +7,15 @@ public class Player {
   boolean movingRight = false;
   boolean movingLeft = false;
   int health = 100;
+  Weapon weapon;
   
   public Player(int xcor, int ycor) {
     x = xcor;
     y = ycor;
+  }
+  
+  public void giveWeapon(ArrayList<Platform> platforms){
+    weapon = new Weapon(this, platforms);
   }
   
   public void displayPlayer() {
@@ -37,6 +42,10 @@ public class Player {
     }
     if (x >=550) {
       x = 550;
+    }
+    if (weapon != null){
+      weapon.display;
+      weapon.updateBullet();
     }
   }
   
