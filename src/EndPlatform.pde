@@ -1,5 +1,5 @@
 public class EndPlatform extends Platform{
-  boolean completed = false; 
+  boolean completed = false;
   public EndPlatform(float x, float y, float xLength, float yLength) {
     super(x, y, xLength, yLength);
   }
@@ -14,13 +14,18 @@ public class EndPlatform extends Platform{
 
     if (
       playerBottom + p.dy >= y &&
-      playerBottom <= y + yLength - 10 &&    
-      playerRight > x &&         
+      playerBottom <= y + yLength - 10 &&
+      playerRight > x &&
       playerLeft < x + xLength - 10 &&
-      p.dy >= 0            
+      p.dy >= 0
     ) {
       completed = true;
-    }
+    } else {
     completed = false;
+    }
+  }
+
+  public boolean isCompleted(){
+    return completed;
   }
 }
