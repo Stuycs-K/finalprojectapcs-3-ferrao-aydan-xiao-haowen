@@ -5,9 +5,12 @@ public class Weapon{
   float radius = 40;
   float w= 30;
   float h = 10;
-  
-  Weapon(Player p){
+  ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+  ArrayList<Platform> platforms;
+
+  Weapon(Player p, ArrayList<Platform> platforms){
     this.player = p;
+    this.platforms = platforms;
   }
   
   public void display(){
@@ -40,5 +43,23 @@ public class Weapon{
     endShape(CLOSE);
     
   }
+  public void shoot(){
+    float angle = atan2(mouseY - player.y, mouseX - player.x);
+    float bulletX = player.x + cos(angle) * radius;
+    float bulletY = player.y + sin(angle) * radius;
+    bullets.add(new Bullet(bulletX, bulletY, mouseX, mouseY));
+  }
   
+  public void updateBullet(){
+    for (int i = 0; i < bullets.size(); i++) { 
+      bullets.get(i).update(this.platforms);
+      bullets.get(i).display();
+    }
+    for (int i = 0; i < bullets.size();){
+      if (!bullets.get(i).isAlive){
+        bullets.remove(i);
+    } else {
+      i++;
+    }
+  }
 }
