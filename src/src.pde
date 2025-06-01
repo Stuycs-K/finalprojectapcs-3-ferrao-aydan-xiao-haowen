@@ -16,7 +16,7 @@ void draw() {
   object.displayPlayer();
   objectCamera.moveCamera();
   test.updateLevel();
-  textSize(20);w
+  textSize(20);
   fill(0);
   text("(" + object.x + ", " + object.y + ")", 100, 100);
   if (object.x >= 500) {

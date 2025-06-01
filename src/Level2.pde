@@ -1,6 +1,6 @@
-public class Level1 extends Level {
+public class Level2 extends Level {
   boolean createLevel = true;
-  public Level1(Player thing) {
+  public Leve12(Player thing) {
     this.object = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
   }
