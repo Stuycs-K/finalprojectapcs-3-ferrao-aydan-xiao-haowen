@@ -1,6 +1,8 @@
 Player object = new Player(300, 300);
 ArrayList<Platform> platformList = new ArrayList<Platform>();
 Camera objectCamera = new Camera(object, platformList);
+int levelN = 1;
+
 
 void setup() {
   size(600, 600);
@@ -48,5 +50,11 @@ void keyReleased() {
   if(key == 'd') {
       object.dx = 0;
       object.movingRight = false;
+  }
+}
+
+void mousePressed(){
+  if (object.weapon != null){
+    object.weapon.shoot();
   }
 }

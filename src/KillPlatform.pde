@@ -10,7 +10,7 @@ public class KillPlatform extends Platform {
   }
   
   public void displayPlatform() {
-    fill(0, 255, 0);
+    fill(255, 0, 0);
     rect(x, y, xLength, yLength);
   }
   
@@ -31,5 +31,9 @@ public class KillPlatform extends Platform {
     } else {
       collided = false;
     }
+  }
+  
+  public boolean hasCollided(){
+    return collided;
   }
 }  
