@@ -23,4 +23,8 @@ public class KillPlatform extends Platform {
     
     collided = overlapX && overlapY;
   }
+  
+  public boolean hasCollided(){
+    return collided;
+  }
 }  

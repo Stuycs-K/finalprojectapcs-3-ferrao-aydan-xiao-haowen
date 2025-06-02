@@ -16,5 +16,6 @@ public class Level0 extends Level {
     object.x = 300;
     object.y = 300;
     object.giveWeapon(this.platformList);
+    
   }
 }

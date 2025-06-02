@@ -24,3 +24,9 @@ Didn't do coding today but designed all of the levels for us to put into the lev
 
 ### 2025-05-29 - Pair Programming
 We did a lot of pair programming today and got a lot of stuff done, will need to design more levels at home.
+
+### 2025-05-30 - Worked on gun
+Made a gun class that attaches itself to the player will help create bullet class later that fires from the player. The gun is for design purposes only. We can use it to expand on other things later
+
+### 2025-05-31
+I worked on bullet, implementing it into things like Weapon and player so that we can fire bullets FROM the player. Also made some adjustments for the platforms implemented into weapons so we can manage it better and fix collided. Sent my code to Aydan for him to debug and fix. Need to work on death platform tho
