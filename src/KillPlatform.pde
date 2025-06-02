@@ -16,15 +16,6 @@ public class KillPlatform extends Platform {
     float playerBottom = p.y + 25;
     float playerLeft = p.x - 25;
     float playerRight = p.x + 25;
-<<<<<<< HEAD
-    float playerTop = p.y - 25;
-    float playerBottom = p.y + 25;
-
-    boolean overlapX = playerRight  > x && playerLeft < x + xLength;
-    boolean overlapY = playerBottom > y && playerTop  < y + yLength;
-    
-    collided = overlapX && overlapY;
-=======
 
     if (
       playerBottom + p.dy >= y &&
@@ -40,10 +31,5 @@ public class KillPlatform extends Platform {
     else {
       collided = false;
     }
->>>>>>> Aydan
-  }
-  
-  public boolean hasCollided(){
-    return collided;
   }
 }  
