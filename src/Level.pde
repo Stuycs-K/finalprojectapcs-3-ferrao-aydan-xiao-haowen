@@ -6,10 +6,11 @@ public class Level {
 >>>>>>> Haowen
   EndPlatform end;
   Player object;
-  
+
   public ArrayList<Platform> getList() {
     return platformList;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   
   public boolean end() {
@@ -27,6 +28,13 @@ public class Level {
     return end.completed;
   }
 >>>>>>> Haowen
+=======
+
+  public boolean end() {
+    return end.collided;
+  }
+
+>>>>>>> Aydan
   public void updateLevel() {
     for (Platform e : platformList) {
       e.displayPlatform();

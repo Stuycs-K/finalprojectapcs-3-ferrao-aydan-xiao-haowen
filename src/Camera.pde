@@ -8,16 +8,17 @@ public class Camera {
     object = a;
     bigList = list;
   }
+
   
   public void moveCamera() {
     float originalX = object.x;
-    if (object.x >= currentRight - 50 && object.movingRight) {
+    if (object.x >= currentRight - 100 && object.movingRight) {
       for (Platform thing : bigList) {
         thing.x -= 10;
       }
       object.x = originalX;
     }
-    else if (object.x <= currentLeft + 50 && object.movingLeft) {
+    else if (object.x <= currentLeft + 100 && object.movingLeft) {
       for (Platform thing : bigList) {
         thing.x += 10;
       }

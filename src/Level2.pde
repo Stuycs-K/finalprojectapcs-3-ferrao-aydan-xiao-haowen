@@ -13,6 +13,9 @@ public class Level2 extends Level {
     platformList.add(new Platform(1300, 340, 200, 10));
     this.end = new EndPlatform(1000, 500, 100, 100);
     platformList.add(end);
+       
+    object.x = 300;
+    object.y = 300;
     
   }
 }
