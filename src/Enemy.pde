@@ -27,11 +27,11 @@ public class Enemy extends Player {
     x += dx;
     y += dy;
     dy += gravity;
-    if (x <=50) {
-      x = 50;
+    if (x <=100) {
+      x = 100;
     }
-    if (x >= 550) {
-      x = 550;
+    if (x >= 500) {
+      x = 500;
     }
     if (weapon != null){
       weapon.display();

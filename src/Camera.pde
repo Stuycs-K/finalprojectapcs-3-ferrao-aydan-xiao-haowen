@@ -12,13 +12,13 @@ public class Camera {
   
   public void moveCamera() {
     float originalX = object.x;
-    if (object.x >= currentRight - 100 && object.movingRight) {
+    if (object.x >= currentRight - 150 && object.movingRight) {
       for (Platform thing : bigList) {
         thing.x -= 10;
       }
       object.x = originalX;
     }
-    else if (object.x <= currentLeft + 100 && object.movingLeft) {
+    else if (object.x <= currentLeft + 150 && object.movingLeft) {
       for (Platform thing : bigList) {
         thing.x += 10;
       }
