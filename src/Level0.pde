@@ -10,6 +10,7 @@ public class Level0 extends Level {
     platformList.clear();
     platformList.add(new Platform(0, 550, 1200, 50));
     platformList.add(new Platform(800, 400, 200, 20));
+    platformList.add(new KillPlatform(400, 300, 30, 200));
     this.end = new EndPlatform(820, 300, 150, 100);
     platformList.add(end);
     object.x = 300;

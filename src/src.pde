@@ -13,6 +13,7 @@ void setup() {
   currentLevel = levelList.get(0);
 }
 void draw() {
+  noStroke();
   background(175, 175, 225);
   fill(0);
   textSize(20);

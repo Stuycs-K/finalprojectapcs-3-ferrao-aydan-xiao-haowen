@@ -15,12 +15,12 @@ public class KillPlatform extends Platform {
  public void checkCollision(Player p) {
     float playerLeft = p.x - 25;
     float playerRight = p.x + 25;
-    float playerTop    = p.y - 25;
+    float playerTop = p.y - 25;
     float playerBottom = p.y + 25;
 
     boolean overlapX = playerRight  > x && playerLeft < x + xLength;
     boolean overlapY = playerBottom > y && playerTop  < y + yLength;
-
+    
     collided = overlapX && overlapY;
   }
 }  
