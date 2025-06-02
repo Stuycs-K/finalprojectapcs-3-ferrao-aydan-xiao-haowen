@@ -56,7 +56,6 @@ void keyReleased() {
 }
 
 void mousePressed() {
-  // ✅ SHOOT HERE
   if (object.weapon != null) {
     object.weapon.shoot();
   }
