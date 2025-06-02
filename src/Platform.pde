@@ -3,12 +3,17 @@ public class Platform {
   float y;
   float xLength;
   float yLength;
+  boolean end;
+  boolean death;
+  boolean collided = false;
   
   public Platform(float x, float y, float xLength, float yLength) {
     this.x = x;
     this.y = y;
     this.xLength = xLength;
     this.yLength = yLength;
+    end = false;
+    death = false;
   }
   
   public void displayPlatform() {
@@ -30,6 +35,10 @@ public class Platform {
     ) {
       p.y = y - 25; 
       p.dy = 0;      
+      collided = true;
+    }
+    else {
+      collided = false;
     }
   }
 }  

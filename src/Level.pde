@@ -1,4 +1,4 @@
-public abstract class Level {
+public class Level {
   ArrayList<Platform> platformList = new ArrayList<Platform>();
   EndPlatform end;
   Player object;
@@ -8,13 +8,20 @@ public abstract class Level {
   }
   
   public boolean end() {
-    return end.completed;
+    return end.collided;
   }
+  
   public void updateLevel() {
     for (Platform e : platformList) {
       e.displayPlatform();
       e.checkCollision(object);
+      if (e.death && e.collided) {
+        reset();
+        return;
+      }
     }
   }
-  public abstract void reset();
+  public void reset() {
+    return;
+  }
 }

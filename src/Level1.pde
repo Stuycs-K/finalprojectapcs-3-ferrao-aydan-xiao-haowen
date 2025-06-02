@@ -6,9 +6,14 @@ public class Level1 extends Level {
   }
   
   public void reset() {
-    platformList.add(new Platform(50, 580, 5000, 10));
-    this.end = new EndPlatform(1000, 500, 100, 100);
+    platformList.clear();
+    platformList.add(new Platform(100, 580, 200, 10));
+    platformList.add(new Platform(500, 580, 200, 10));
+    platformList.add(new Platform(900, 580, 200, 10));
+    platformList.add(new Platform(1300, 580, 200, 10));
+    this.end = new EndPlatform(1400, 400, 150, 100);
     platformList.add(end);
-    
+    object.x = 300;
+    object.y = 300;
   }
-}
+}  

@@ -40,11 +40,11 @@ public class Player {
     if (x <=50) {
       x = 50;
     }
-    if (x >=550) {
+    if (x >= 550) {
       x = 550;
     }
     if (weapon != null){
-      weapon.display;
+      weapon.display();
       weapon.updateBullet();
     }
   }
