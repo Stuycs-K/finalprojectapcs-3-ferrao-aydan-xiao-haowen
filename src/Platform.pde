@@ -14,6 +14,7 @@ public class Platform {
     this.yLength = yLength;
     end = false;
     death = false;
+    collided = false;
   }
 
   public void displayPlatform() {
@@ -21,24 +22,36 @@ public class Platform {
     rect(x, y, xLength, yLength);
   }
 
- public void checkCollision(Player p) {
-    float playerBottom = p.y + 25;
-    float playerLeft = p.x - 25;
-    float playerRight = p.x + 25;
-
+  public void checkCollision(Player p) {
+    collided = false;
     if (
-      playerBottom + p.dy >= y &&
-      playerBottom <= y + yLength - 10 &&
-      playerRight > x &&
-      playerLeft < x + xLength - 10 &&
-      p.dy >= 0
+      p.x + 25 > x && p.x - 25 < x + xLength &&
+      p.y + 25 > y && p.y - 25 < y + yLength
     ) {
-      p.y = y - 25;
-      p.dy = 0;
       collided = true;
-    }
-    else {
-      collided = false;
+      float overlapTop = (p.y + 25) - y;
+      float overlapBottom = (y + yLength) - (p.y - 25);
+      float overlapLeft = (p.x + 25) - x;
+      float overlapRight = (x + xLength) - (p.x - 25);
+
+      float minVertical = Math.min(overlapTop, overlapBottom);
+      float minHorizontal = Math.min(overlapLeft, overlapRight);
+
+      if (minVertical < minHorizontal) {
+        if (overlapTop < overlapBottom) {
+          p.y = y - 25;
+          p.dy = 0;
+        } else {
+          p.y = y + yLength + 25;
+          if (p.dy < 0) p.dy = 0;
+        }
+      } else {
+        if (overlapLeft < overlapRight) {
+          p.x = x - 25;
+        } else {
+          p.x = x + xLength + 25;
+        }
+      }
     }
   }
 }

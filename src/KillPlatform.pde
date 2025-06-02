@@ -1,10 +1,9 @@
 public class KillPlatform extends Platform {
-  boolean collided = false;
-  boolean normal = false;
   public KillPlatform(float x, float y, float xLength, float yLength) {
     super(x, y, xLength, yLength);
     end = false;
-    death = true;
+    this.death = true;
+    collided = false;
   }
   
   public void displayPlatform() {
@@ -12,24 +11,15 @@ public class KillPlatform extends Platform {
     rect(x, y, xLength, yLength);
   }
   
- public void checkCollision(Player p) {
-    float playerBottom = p.y + 25;
-    float playerLeft = p.x - 25;
-    float playerRight = p.x + 25;
-
+  public void checkCollision(Player p) {
+    collided = false;
     if (
-      playerBottom + p.dy >= y &&
-      playerBottom <= y + yLength - 10 &&
-      playerRight > x &&
-      playerLeft < x + xLength - 10 &&
-      p.dy >= 0
+      p.x + 25 > x &&
+      p.x - 25 < x + xLength &&
+      p.y + 25 > y &&
+      p.y - 25 < y + yLength
     ) {
-      p.y = y - 25;
-      p.dy = 0;
       collided = true;
-    }
-    else {
-      collided = false;
     }
   }
 }  
