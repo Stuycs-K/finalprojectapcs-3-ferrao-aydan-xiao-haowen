@@ -1,7 +1,9 @@
 public class EndPlatform extends Platform{
-  boolean completed = false; 
+  boolean collided = false;
   public EndPlatform(float x, float y, float xLength, float yLength) {
     super(x, y, xLength, yLength);
+    end = true;
+    death = false;
   }
   public void displayPlatform() {
     fill(0, 0, 255);
@@ -14,13 +16,18 @@ public class EndPlatform extends Platform{
 
     if (
       playerBottom + p.dy >= y &&
-      playerBottom <= y + yLength - 10 &&    
-      playerRight > x &&         
+      playerBottom <= y + yLength - 10 &&
+      playerRight > x &&
       playerLeft < x + xLength - 10 &&
-      p.dy >= 0            
+      p.dy >= 0
     ) {
-      completed = true;
+      collided = true;
+    } else {
+    collided = false;
     }
-    completed = false;
+  }
+
+  public boolean isCompleted(){
+    return collided;
   }
 }

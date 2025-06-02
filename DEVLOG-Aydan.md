@@ -15,3 +15,5 @@ Completed the camera by moving all platforms with the camera. Started the abstra
 Continued working on the abstract level class and started level design
 ### 2024-05-29 - Brief description
 Finished a rudimentary level class and successfully tested it.
+### 2024-06-02 - Brief description
+Finished a rudimentary level class and successfully tested it.
