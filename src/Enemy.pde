@@ -11,11 +11,11 @@ public class Enemy extends Player {
     fill(255, 100, 100);
     ellipse(x, y, 50, 50);
     fill(0);
-    if(dx > 0) {
+    if(object.x > this.x) {
       ellipse(x + 20, y - 5, 10, 20);
       ellipse(x, y - 5, 10, 20);
     }
-    else if(dx < 0) {
+    else if(object.x < this.x) {
       ellipse(x - 20, y - 5, 10, 20);
       ellipse(x, y - 5, 10, 20);
     }
@@ -37,9 +37,4 @@ public class Enemy extends Player {
       weapon.updateBullet();
     }
   }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> Aydan
 }

@@ -19,11 +19,12 @@ void draw() {
   textSize(20);
   text("Current Level: " + index, 10, 30);
   if (currentLevel.end()) {
+    object.weapon.bullets.clear();
     index++;
     currentLevel = levelList.get(index);
     currentLevel.reset();
-    object.weapon.bullets.clear();
     objectCamera = new Camera(object, currentLevel.platformList);
+    object.giveWeapon(currentLevel.platformList);
     
   }
   
