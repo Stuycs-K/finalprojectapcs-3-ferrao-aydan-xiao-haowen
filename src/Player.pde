@@ -37,11 +37,11 @@ public class Player {
     x += dx;
     y += dy;
     dy += gravity;
-    if (x <=50) {
-      x = 50;
+    if (x <=150) {
+      x = 150;
     }
-    if (x >= 550) {
-      x = 550;
+    if (x >= 450) {
+      x = 450;
     }
     if (weapon != null){
       weapon.display();

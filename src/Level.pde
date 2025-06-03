@@ -11,16 +11,22 @@ public class Level {
     return end.collided;
   }
 
-  public void updateLevel() {
-    for (Platform e : platformList) {
-      e.displayPlatform();
-      e.checkCollision(object);
-      if (e.death && e.collided) {
-        reset();
-        return;
-      }
+public void updateLevel() {
+  boolean resetNeeded = false;
+  
+  for (Platform e : platformList) {
+    e.displayPlatform();
+    e.checkCollision(object);
+    if (e.death && e.collided) {
+      resetNeeded = true;
     }
   }
+  
+  if (resetNeeded) {
+    reset();
+  }
+}
+
   public void reset() {
     return;
   }

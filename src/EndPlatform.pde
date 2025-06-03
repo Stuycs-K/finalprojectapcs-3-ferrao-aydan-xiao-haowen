@@ -10,20 +10,13 @@ public class EndPlatform extends Platform{
     rect(x, y, xLength, yLength);
   }
   public void checkCollision(Player p) {
-    float playerBottom = p.y + 25;
-    float playerLeft = p.x - 25;
-    float playerRight = p.x + 25;
-
     if (
-      playerBottom + p.dy >= y &&
-      playerBottom <= y + yLength - 10 &&
-      playerRight > x &&
-      playerLeft < x + xLength - 10 &&
-      p.dy >= 0
+      p.x + 25 > x &&
+      p.x - 25 < x + xLength &&
+      p.y + 25 > y &&
+      p.y - 25 < y + yLength
     ) {
       collided = true;
-    } else {
-    collided = false;
     }
   }
 

@@ -1,13 +1,13 @@
 public class Enemy extends Player {
-  
+
   public Enemy(int xcor, int ycor) {
     super(xcor, ycor);
   }
-  
+
   public void giveWeapon(ArrayList<Platform> platforms){
     weapon = new Weapon(this, platforms);
   }
-  
+
   public void displayPlayer() {
     fill(255, 100, 100);
     ellipse(x, y, 50, 50);
@@ -22,22 +22,22 @@ public class Enemy extends Player {
     }
     else{
       ellipse(x - 10, y - 5, 10, 20);
-      ellipse(x + 10, y - 5, 10, 20);  
+      ellipse(x + 10, y - 5, 10, 20);
     }
     x += dx;
     y += dy;
     dy += gravity;
-    if (x <=50) {
-      x = 50;
+    if (x <=100) {
+      x = 100;
     }
-    if (x >= 550) {
-      x = 550;
+    if (x >= 500) {
+      x = 500;
     }
     if (weapon != null){
       weapon.display();
       weapon.updateBullet();
     }
   }
-  
-  
+
+
 }
