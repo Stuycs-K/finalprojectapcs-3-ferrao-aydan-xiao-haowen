@@ -30,3 +30,6 @@ Made a gun class that attaches itself to the player will help create bullet clas
 
 ### 2025-05-31
 I worked on bullet, implementing it into things like Weapon and player so that we can fire bullets FROM the player. Also made some adjustments for the platforms implemented into weapons so we can manage it better and fix collided. Sent my code to Aydan for him to debug and fix. Need to work on death platform tho
+
+### 2025-06-02
+Made description and added movement descrpitions. Fixed platforms
