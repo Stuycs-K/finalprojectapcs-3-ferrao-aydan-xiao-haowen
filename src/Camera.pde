@@ -3,10 +3,12 @@ public class Camera {
   ArrayList<Platform>  bigList;
   int currentLeft = 0;
   int currentRight = 600;
+  boolean enemies;
   
   public Camera(Player a, ArrayList<Platform> list) {
     object = a;
     bigList = list;
+    enemies = false;
   }
 
   

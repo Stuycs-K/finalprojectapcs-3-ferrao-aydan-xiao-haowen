@@ -1,11 +1,10 @@
 public class Enemy extends Player {
-
-  public Enemy(int xcor, int ycor) {
+  int health;
+  Player object;
+  public Enemy(int xcor, int ycor, int health, Player thing) {
     super(xcor, ycor);
-  }
-
-  public void giveWeapon(ArrayList<Platform> platforms){
-    weapon = new Weapon(this, platforms);
+    this.health = health;
+    object = thing;
   }
 
   public void displayPlayer() {
@@ -38,6 +37,9 @@ public class Enemy extends Player {
       weapon.updateBullet();
     }
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Aydan
 }

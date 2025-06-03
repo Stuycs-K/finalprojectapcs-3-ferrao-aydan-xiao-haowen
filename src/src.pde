@@ -22,7 +22,9 @@ void draw() {
     index++;
     currentLevel = levelList.get(index);
     currentLevel.reset();
+    object.weapon.bullets.clear();
     objectCamera = new Camera(object, currentLevel.platformList);
+    
   }
   
   object.dx = 0;
