@@ -13,6 +13,7 @@ void setup() {
   currentLevel = levelList.get(0);
 }
 void draw() {
+  noStroke();
   background(175, 175, 225);
   fill(0);
   textSize(20);
@@ -21,7 +22,9 @@ void draw() {
     index++;
     currentLevel = levelList.get(index);
     currentLevel.reset();
+    object.weapon.bullets.clear();
     objectCamera = new Camera(object, currentLevel.platformList);
+    
   }
   
   object.dx = 0;
