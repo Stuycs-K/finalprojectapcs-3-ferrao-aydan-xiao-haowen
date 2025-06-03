@@ -13,11 +13,16 @@ Blue enemy: gives you dash
 
 # Intended usage:
 Use WAD to move around:
+
 (W): Jump
+
 (A): Move left
+
 (D): Move right
 
+
 (R): Reset level
+
 (M2): Shoot bullets / Mouse
   
 You can stick to ceilings by holding down (W) !!!
