@@ -37,9 +37,4 @@ public class Enemy extends Player {
       weapon.updateBullet();
     }
   }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> Aydan
 }
