@@ -23,34 +23,42 @@ void draw() {
     currentLevel.reset();
     objectCamera = new Camera(object, currentLevel.platformList);
   }
+  
+  object.dx = 0;
+  
+  if (wPressed && object.dy == 0) object.dy = -10;
+  if (aPressed) object.dx = -5;
+  if (dPressed) object.dx = 5;
+  
   object.displayPlayer();
   currentLevel.updateLevel();
   objectCamera.moveCamera();
 }
+boolean wPressed = false;
+boolean aPressed = false;
+boolean dPressed = false;
 void keyPressed() {
-  if (key == 'w' && object.dy == 0) {
-    object.dy = -10;
-  }
-  if (key == 'a') {
-    object.dx = -5;
+  if (key == 'w' || key == 'W') wPressed = true;
+  if (key == 'a' || key == 'A') {
+    aPressed = true;
     object.movingLeft = true;
   }
-  if (key == 'd') {
-    object.dx = 5;
+  if (key == 'd' || key == 'D') {
+    dPressed = true;
     object.movingRight = true;
   }
-  if (key == 'r') {
-    currentLevel.reset();
+  if (key == 'r' || key == 'R') currentLevel.reset();
   }
-}
+
 
 void keyReleased() {
-  if (key == 'a') {
-    object.dx = 0;
+  if ((key == 'w' || key == 'W')) wPressed = false;
+  if (key == 'a' || key == 'A') {
+    aPressed = false;
     object.movingLeft = false;
   }
-  if (key == 'd') {
-    object.dx = 0;
+  if (key == 'd' || key == 'D') {
+    dPressed = false;
     object.movingRight = false;
   }
 }
