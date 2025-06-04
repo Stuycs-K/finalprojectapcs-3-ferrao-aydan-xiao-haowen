@@ -2,6 +2,7 @@ Player object = new Player(300, 300);
 ArrayList<Level> levelList = new ArrayList<Level>();
 Camera objectCamera;
 Level currentLevel;
+RangeEnemy test = new RangeEnemy(300, 400, object, objectCamera);
 int index = 0;
 void setup() {
   size(600, 600);
@@ -34,6 +35,7 @@ void draw() {
   if (aPressed) object.dx = -5;
   if (dPressed) object.dx = 5;
   
+  test.displayPlager();
   object.displayPlayer();
   currentLevel.updateLevel();
   objectCamera.moveCamera();

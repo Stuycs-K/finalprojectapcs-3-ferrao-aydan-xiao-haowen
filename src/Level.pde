@@ -1,5 +1,6 @@
 public class Level {
   ArrayList<Platform> platformList = new ArrayList<Platform>();
+  ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
   EndPlatform end;
   Player object;
 

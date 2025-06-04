@@ -1,10 +1,12 @@
-public class Enemy extends Player {
+public abstract class Enemy extends Player {
   int health;
   Player object;
-  public Enemy(int xcor, int ycor, int health, Player thing) {
+  Camera currentCamera;
+  public Enemy(int xcor, int ycor, int health, Player thing, Camera otherthing) {
     super(xcor, ycor);
-    this.health = health;
     object = thing;
+    currentCamera = otherthing;
+    this.health = health;
   }
 
   public void displayPlayer() {
@@ -26,15 +28,18 @@ public class Enemy extends Player {
     x += dx;
     y += dy;
     dy += gravity;
-    if (x <=100) {
-      x = 100;
-    }
-    if (x >= 500) {
-      x = 500;
-    }
-    if (weapon != null){
-      weapon.display();
-      weapon.updateBullet();
-    }
   }
+  
+  public void takeDamage() {
+     ArrayList<Bullet> bullets = object.weapon.bullets;
+     for (Bullet boolet : bullets) {
+       if (dist(boolet.pos.x, boolet.pos.y, this.x, this.y) < 6) {
+         health--;
+         bullets.remove(boolet);
+       }
+     } 
+  }
+  
+  public abstract void moveEnemy();
+  public abstract void attackPlayer();
 }
