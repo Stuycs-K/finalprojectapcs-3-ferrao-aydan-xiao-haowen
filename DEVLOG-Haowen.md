@@ -33,3 +33,6 @@ I worked on bullet, implementing it into things like Weapon and player so that w
 
 ### 2025-06-02
 Made description and added movement descrpitions. Fixed platforms
+
+### 2025-06-04
+Made a new level, added cooldowns, and fixed parts of levels
