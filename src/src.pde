@@ -35,7 +35,7 @@ void draw() {
   if (aPressed) object.dx = -5;
   if (dPressed) object.dx = 5;
   
-  test.displayPlager();
+  test.displayPlayer();
   object.displayPlayer();
   currentLevel.updateLevel();
   objectCamera.moveCamera();
