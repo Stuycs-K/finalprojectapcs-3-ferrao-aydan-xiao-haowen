@@ -3,6 +3,7 @@ ArrayList<Level> levelList = new ArrayList<Level>();
 Camera objectCamera;
 Level currentLevel;
 int index = 0;
+int cooldown = 0;
 void setup() {
   size(600, 600);
   levelList.add(new Level0(object));
@@ -25,7 +26,6 @@ void draw() {
     currentLevel.reset();
     objectCamera = new Camera(object, currentLevel.platformList);
     object.giveWeapon(currentLevel.platformList);
-    
   }
   
   object.dx = 0;
@@ -37,6 +37,7 @@ void draw() {
   object.displayPlayer();
   currentLevel.updateLevel();
   objectCamera.moveCamera();
+  cooldown -= 1;
 }
 boolean wPressed = false;
 boolean aPressed = false;
@@ -67,8 +68,11 @@ void keyReleased() {
   }
 }
 
+int timer = 0;
+
 void mousePressed() {
-  if (object.weapon != null) {
+  if (object.weapon != null && cooldown <= 0) {
     object.weapon.shoot();
+    cooldown = 50;
   }
 }
