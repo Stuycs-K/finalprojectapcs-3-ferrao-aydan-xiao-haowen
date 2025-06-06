@@ -4,7 +4,8 @@ public class Level2 extends Level {
     this.object = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
   }
-  
+  //Purpose:
+  //introduce the hang over platform mechanic
   public void reset() {
     platformList.clear();
     platformList.add(new Platform(100, 580, 200, 10));
@@ -15,5 +16,8 @@ public class Level2 extends Level {
     object.x = 150;
     object.y = 450;
     
+  }
+  public int getLevelint(){
+    return 2;
   }
 }

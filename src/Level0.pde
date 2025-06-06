@@ -5,7 +5,8 @@ public class Level0 extends Level {
     this.end = new EndPlatform(1000, 500, 100, 100);
     reset();
   }
-  
+  //Purpose:
+  //Introduce basic movement
   public void reset() {
     platformList.clear();
     platformList.add(new Platform(0, 550, 1200, 50));
@@ -15,5 +16,9 @@ public class Level0 extends Level {
     object.x = 300;
     object.y = 300;
     object.giveWeapon(this.platformList);
+  }
+  
+  public int getLevelint(){
+    return 0;
   }
 }

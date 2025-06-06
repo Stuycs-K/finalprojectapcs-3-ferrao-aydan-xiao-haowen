@@ -3,24 +3,23 @@ public class Level4 extends Level {
   public Level4(Player thing) {
     this.object = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
+    reset();
+  }
+  //PURPOSE:
+  //Real level that you need to win.
+  public void reset() {
+    platformList.clear();
+    platformList.add(new Platform(0, 550, 1200, 50));
+    platformList.add(new Platform(800, 400, 200, 20));
+    //enemy at (850, 400);
+    this.end = new EndPlatform(820, 300, 150, 100);
+    platformList.add(end);
+    object.x = 300;
+    object.y = 300;
+    object.giveWeapon(this.platformList);
   }
   
-  public void updateLevel() {
-    textSize(50);
-    text("You Win!", 100, 100);
-    for (Platform e : platformList) {
-      e.displayPlatform();
-      e.checkCollision(object);
-      if (e.death && e.collided) {
-        reset();
-        return;
-      }
-    }
-  }
-  public void reset() {
-    platformList.add(new Platform(-10000, 3000000, 5000, 10));
-    this.end = new EndPlatform(1000, 10000, 100, 100);
-    platformList.add(end);
-    
+  public int getLevelint(){
+    return 4;
   }
 }
