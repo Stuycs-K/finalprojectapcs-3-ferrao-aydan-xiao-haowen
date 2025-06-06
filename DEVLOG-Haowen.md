@@ -36,3 +36,8 @@ Made description and added movement descrpitions. Fixed platforms
 
 ### 2025-06-04
 Made a new level, added cooldowns, and fixed parts of levels
+
+### 2025-06-06
+Made several new levels, waiting for different enemy types to implement them. Have the levels planned out already. Changed screen resolution.
+TO DO:
+level timer, level selector, different enemy types, implement level design, do stickyplatform and fix platofmr (its not displaying). fix bullet not displaying after original size (600,600)
