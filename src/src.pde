@@ -5,7 +5,7 @@ Level currentLevel;
 int index = 0;
 int cooldown = 0;
 void setup() {
-  size(600, 600);
+  size(1500, 800);
   levelList.add(new Level0(object));
   levelList.add(new Level1(object));
   levelList.add(new Level2(object));
