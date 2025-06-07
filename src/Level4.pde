@@ -1,12 +1,12 @@
-public class Level3 extends Level {
+public class Level4 extends Level {
   boolean createLevel = true;
-  public Level3(Player thing) {
+  public Level4(Player thing) {
     this.object = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
     reset();
   }
   //PURPOSE:
-  //Introduce different enemies
+  //Real level that you need to win.
   public void reset() {
     platformList.clear();
     platformList.add(new Platform(0, 550, 1200, 50));
@@ -20,6 +20,6 @@ public class Level3 extends Level {
   }
   
   public int getLevelint(){
-    return 3;
+    return 4;
   }
 }

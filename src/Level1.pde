@@ -3,7 +3,8 @@ public class Level1 extends Level {
     this.object = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
   }
-
+//Purpose:
+//Introduce the death brick
   public void reset() {
     platformList.clear();
     platformList.add(new Platform(100, 580, 200, 10));
@@ -17,5 +18,9 @@ public class Level1 extends Level {
     platformList.add(end);
     object.x = 100;
     object.y = 500;
+  }
+  
+   public int getLevelint(){
+    return 1;
   }
 }

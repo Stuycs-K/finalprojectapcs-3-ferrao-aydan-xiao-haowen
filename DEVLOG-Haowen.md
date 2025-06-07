@@ -30,3 +30,14 @@ Made a gun class that attaches itself to the player will help create bullet clas
 
 ### 2025-05-31
 I worked on bullet, implementing it into things like Weapon and player so that we can fire bullets FROM the player. Also made some adjustments for the platforms implemented into weapons so we can manage it better and fix collided. Sent my code to Aydan for him to debug and fix. Need to work on death platform tho
+
+### 2025-06-02
+Made description and added movement descrpitions. Fixed platforms
+
+### 2025-06-04
+Made a new level, added cooldowns, and fixed parts of levels
+
+### 2025-06-06
+Made several new levels, waiting for different enemy types to implement them. Have the levels planned out already. Changed screen resolution.
+TO DO:
+level timer, level selector, different enemy types, implement level design, do stickyplatform and fix platofmr (its not displaying). fix bullet not displaying after original size (600,600)
