@@ -6,6 +6,8 @@ public class Player {
   double dy = 0;
   boolean movingRight = false;
   boolean movingLeft = false;
+  boolean lookingLeft = false;
+  boolean lookingRight = false;
   int health = 100;
   Weapon weapon;
   
@@ -36,12 +38,14 @@ public class Player {
     }
     x += dx;
     y += dy;
-    dy += gravity;
-    if (x <=150) {
-      x = 150;
+    if (!flyHacks) {
+       dy += gravity;
     }
-    if (x >= 450) {
-      x = 450;
+    if (x <=300) {
+      x = 300;
+    }
+    if (x >= 1200) {
+      x = 1200;
     }
     if (weapon != null){
       weapon.display();

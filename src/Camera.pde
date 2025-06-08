@@ -2,27 +2,44 @@ public class Camera {
   Player object;
   ArrayList<Platform>  bigList;
   int currentLeft = 0;
-  int currentRight = 600;
-  boolean enemies;
-  
-  public Camera(Player a, ArrayList<Platform> list) {
+  int currentRight = 1500;
+  ArrayList<Enemy> enemyList;
+  public Camera(Player a, ArrayList<Platform> list, ArrayList<Enemy> b) {
     object = a;
     bigList = list;
-    enemies = false;
+    enemyList = b;
   }
 
   
   public void moveCamera() {
     float originalX = object.x;
-    if (object.x >= currentRight - 150 && object.movingRight) {
+    if (object.x >= currentRight - 300 && object.movingRight) {
       for (Platform thing : bigList) {
         thing.x -= 10;
       }
+      for (Enemy enemy : enemyList) {
+        enemy.x -= 10;
+        if (enemy instanceof RangeEnemy) {
+          RangeEnemy Ranger = (RangeEnemy) enemy;
+          for (Bullet b : Ranger.bullets) {
+            b.pos.x -= 10;
+          }
+        }
+      }
       object.x = originalX;
     }
-    else if (object.x <= currentLeft + 150 && object.movingLeft) {
+    else if (object.x <= currentLeft + 300 && object.movingLeft) {
       for (Platform thing : bigList) {
         thing.x += 10;
+      }
+       for (Enemy enemy : enemyList) {
+        enemy.x += 10;
+        if (enemy instanceof RangeEnemy) {
+          RangeEnemy Ranger = (RangeEnemy) enemy;
+          for (Bullet b : Ranger.bullets) {
+            b.pos.x += 10;
+          }
+        }
       }
       object.x = originalX;
     }

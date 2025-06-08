@@ -1,13 +1,35 @@
 public class RangeEnemy extends Enemy {
-  public RangeEnemy(int xcor, int ycor, Player thing, Camera otherthing) {
-    super(xcor, ycor, 5, thing, otherthing);
+  ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+  int cooldown = 0;
+
+  public RangeEnemy(int xcor, int ycor, Player thing, ArrayList<Platform> stuff) {
+    super(xcor, ycor, 3, thing, stuff);
   }
   
   public void moveEnemy() {
-    return;
   }
   
   public void attackPlayer() {
-    
+    if (cooldown <= 0 && this.x >= 50 && this.x <= 1450) {
+      bullets.add(new Bullet(x, y, object.x, object.y));
+      cooldown = 60;
+    } else {
+      cooldown--;
+    }
+    for (int i = bullets.size() - 1; i >= 0; i--) {
+      Bullet b = bullets.get(i);
+      b.update(platforms);
+      b.display();
+  
+      if (dist(b.pos.x, b.pos.y, object.x, object.y) < 25) {
+        bullets.remove(i);
+        death = true;
+        break;
+      }
+
+      if (!b.isAlive) {
+        bullets.remove(i);
+      }
+    }
   }
 }

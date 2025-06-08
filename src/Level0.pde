@@ -9,13 +9,15 @@ public class Level0 extends Level {
   //Introduce basic movement
   public void reset() {
     platformList.clear();
-    platformList.add(new Platform(0, 550, 1200, 50));
+    enemyList.clear();
+    platformList.add(new Platform(0, 550, 3000, 50));
     platformList.add(new Platform(800, 400, 200, 20));
     this.end = new EndPlatform(820, 300, 150, 100);
     platformList.add(end);
     object.x = 300;
     object.y = 300;
     object.giveWeapon(this.platformList);
+    enemyList.add(new RangeEnemy(300, 400, object, platformList));
   }
   
   public int getLevelint(){

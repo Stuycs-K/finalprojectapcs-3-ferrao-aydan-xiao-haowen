@@ -1,15 +1,22 @@
-public abstract class Enemy extends Player {
+public abstract class Enemy {
+  float gravity = 0.3;
+  float x;
+  float y;
+  float dx = 0;
+  float dy = 0;
   int health;
+  boolean death = false;
   Player object;
-  Camera currentCamera;
-  public Enemy(int xcor, int ycor, int health, Player thing, Camera otherthing) {
-    super(xcor, ycor);
+  ArrayList<Platform> platforms;
+  public Enemy(float xcor, float ycor, int health, Player thing, ArrayList<Platform> stuff) {
+    x = xcor;
+    y = ycor;
     object = thing;
-    currentCamera = otherthing;
+    platforms = stuff;
     this.health = health;
   }
 
-  public void displayPlayer() {
+  public void displayEnemy() {
     fill(255, 100, 100);
     ellipse(x, y, 50, 50);
     fill(0);
@@ -31,14 +38,16 @@ public abstract class Enemy extends Player {
   }
   
   public void takeDamage() {
-     ArrayList<Bullet> bullets = object.weapon.bullets;
-     for (Bullet boolet : bullets) {
-       if (dist(boolet.pos.x, boolet.pos.y, this.x, this.y) < 6) {
-         health--;
-         bullets.remove(boolet);
-       }
-     } 
+    ArrayList<Bullet> bullets = object.weapon.bullets;
+    for (int i = bullets.size() - 1; i >= 0; i--) {
+      Bullet boolet = bullets.get(i);
+      if (dist(boolet.pos.x, boolet.pos.y, this.x, this.y) < 25) {
+        health--;
+        bullets.remove(i);
+      }
+    }
   }
+
   
   public abstract void moveEnemy();
   public abstract void attackPlayer();

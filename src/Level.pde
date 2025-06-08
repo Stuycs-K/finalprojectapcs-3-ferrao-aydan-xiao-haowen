@@ -21,6 +21,26 @@ public void updateLevel() {
     if (e.death && e.collided) {
       resetNeeded = true;
     }
+    for (Enemy enemy : enemyList) {
+      e.checkCollision(enemy);
+    }
+  }
+  
+  for (int i = enemyList.size() - 1; i >= 0; i--) {
+    Enemy enemy = enemyList.get(i);
+  
+    if (enemy.health <= 0) {
+      enemyList.remove(i);
+    } 
+    else {
+      enemy.moveEnemy();
+      enemy.displayEnemy();
+      enemy.takeDamage();
+      enemy.attackPlayer();
+    }
+   if (enemy.death) {
+     resetNeeded = true;
+   }
   }
   
   if (resetNeeded) {
