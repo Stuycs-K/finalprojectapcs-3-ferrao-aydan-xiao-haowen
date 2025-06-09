@@ -5,7 +5,11 @@ Camera playerCamera;
 Level currentLevel;
 int index = 0;
 int cooldown = 0;
+int startTime = 0;
+int endTime = 0;
+boolean timerStopped = false;
 void setup() {
+  startTime = millis();
   size(1500, 800);
   levelList.add(new Level0(player));
   levelList.add(new Level1(player));
@@ -26,6 +30,13 @@ void draw() {
   if(index < 7){
   text("Current Level: " + index, 10, 30);
   }
+  if(!timerStopped){
+    float elapse =(millis() - startTime) / 1000.0;
+    text("Time: " + elapse + "s", 10, 60);
+  } else {
+    float totalTime = (endTime - startTime) / 1000.0;
+    text("Final Time: " + totalTime + "s", 10, 60);
+  }
   if (currentLevel.end()) {
     player.weapon.bullets.clear();
     index++;
@@ -35,6 +46,11 @@ void draw() {
     currentLevel.reset();
     playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
     player.giveWeapon(currentLevel.platformList);
+    
+    if(index == 7 && !timerStopped){
+      endTime = millis();
+      timerStopped = true;
+    }
   }
   player.dx = 0;
   if (flyHacks) {
@@ -145,8 +161,6 @@ void keyReleased() {
   }
   if (key == 'f' || key == 'F')  flyHacks = !flyHacks;
 }
-
-int timer = 0;
 
 void mousePressed() {
   if (player.weapon != null && cooldown <= 0) {
