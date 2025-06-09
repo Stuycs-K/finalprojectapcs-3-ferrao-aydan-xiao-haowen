@@ -27,10 +27,12 @@ public class Player {
     if(dx > 0) {
       ellipse(x + 20, y - 5, 10, 20);
       ellipse(x, y - 5, 10, 20);
+      lookingRight = true;
     }
     else if(dx < 0) {
       ellipse(x - 20, y - 5, 10, 20);
       ellipse(x, y - 5, 10, 20);
+      lookingLeft = true;
     }
     else{
       ellipse(x - 10, y - 5, 10, 20);

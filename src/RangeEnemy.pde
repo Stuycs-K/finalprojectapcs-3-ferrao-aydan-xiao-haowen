@@ -10,7 +10,7 @@ public class RangeEnemy extends Enemy {
   }
   
   public void attackPlayer() {
-    if (cooldown <= 0 && this.x >= 50 && this.x <= 1450) {
+    if (cooldown <= 0 && Math.abs(this.x - object.x) <= 1000) {
       bullets.add(new Bullet(x, y, object.x, object.y));
       cooldown = 60;
     } else {

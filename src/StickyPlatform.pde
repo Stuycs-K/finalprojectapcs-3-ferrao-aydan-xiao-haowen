@@ -36,7 +36,7 @@ public class StickyPlatform extends Platform {
 
       if (minVertical < minHorizontal) {
         if (overlapTop < overlapBottom) {
-          p.y = y - 25;
+            p.y = y - 25;
           p.dy = 0;
         } else {
           p.y = y + yLength + 25;
