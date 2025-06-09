@@ -13,11 +13,11 @@ Red enemy: normal enemy
 
 Yellow enemy: gives you extra jump
 
-Blue enemy: gives you dash
+<s>Blue enemy: gives you dash</s>
 
-Time mechanic to get a best time (IN DEVELOPMENT)
+Time mechanic to get a best time
 
-Level selector (IN DEVELOPMENT)
+<s>Level selector (IN DEVELOPMENT)</s>
 
 ###
 
@@ -30,10 +30,13 @@ Use WAD to move around:
 
 (D): Move right
 
-###
-
 (R): Reset level
 
 (M2): Shoot bullets / Mouse
-  
+
 You can stick to ceilings by holding down (W) !!!
+
+### Cheat Codes:
+(1-7) To cycle between each level
+
+(F) To turn on flight mode and fly just in case the game is too hard.

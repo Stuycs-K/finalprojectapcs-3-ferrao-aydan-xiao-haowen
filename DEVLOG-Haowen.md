@@ -41,3 +41,9 @@ Made a new level, added cooldowns, and fixed parts of levels
 Made several new levels, waiting for different enemy types to implement them. Have the levels planned out already. Changed screen resolution.
 TO DO:
 level timer, level selector, different enemy types, implement level design, do stickyplatform and fix platofmr (its not displaying). fix bullet not displaying after original size (600,600)
+
+### 2025-06-07
+Began implementing the movement abilities and designing the final level designed
+
+### 2025-06-08
+Finished the level implementation and movement abilities for the player and added the final timer.

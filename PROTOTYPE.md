@@ -5,13 +5,14 @@ We will be doing the Neon White spinoff making the player a small cube. At this 
 Technical Details: For the actual weapons, we plan on the PVectors we learned about to calculate the actual rays that we need to calculate the hitscan weapons firing, enemy attacks, and basically all interactions between each character. We start off with a katana, which will just be a gun with a small range. When we fire, the ray will check for the first thing it hits, if it's a wall, it will not register. If it hits an enemy, they will turn into a card.
 Timer at the top of the screen when you finish the game.
 
-Planned cards
+<s>Planned cards
 Yellow card: pistol 1 pellet with 1 damage
 Red card: shotgun 5 pellets with 1 damage
 Blue card: sniper 1 pellet with 5 damage
 Green card: uzi with 1 pellet 1 damages
-Purple: Grenades that can boost you(if we have extra time) or explode an enemy
+Purple: Grenades that can boost you(if we have extra time) or explode an enemy</s>
 
+There is now only one gun the player spawns with due to time constraits.
 
 # Project Design
 
@@ -21,6 +22,6 @@ We will be updating this UML chart as we start each section of the project but t
 
 # Intended pacing:
 
-Since Haowen is more familiar with game mechanics, he will work on the level design. Creating the platforms of each level, and designing the actual levels. Aydan will begin with creating the player and hopefully getting the cameras working with the player. Aydan should be able to complete his portion quicker so he will also create the enemies interface and weapons abstract class. Then, at least we plan on Haowen taking the 5 weapons, and Aydan taking the 3 enemies to try and fix the attacking + camera issues that will most definitely occur. After that, putting it together will be both Aydan and Haowen.
+Since Haowen is more familiar with game mechanics, he will work on the level design. Creating the platforms of each level, and designing the actual levels. Aydan will begin with creating the player and hopefully getting the cameras working with the player. Aydan should be able to complete his portion quicker so he will also create the enemies interface and weapons abstract class. Then, at least we plan on Haowen taking the weapon, and Aydan taking the <s>3</s> 2 enemies to try and fix the attacking + camera issues that will most definitely occur. After that, putting it together will be both Aydan and Haowen.
 
 Planned timeline: [Timeline] (https://lucid.app/lucidspark/44df384e-0c93-43f9-a075-62d0a98d42f0/edit?page=0_0#)
