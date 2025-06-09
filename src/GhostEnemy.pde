@@ -24,9 +24,7 @@ public class GhostEnemy extends Enemy {
     PVector direction = new PVector(object.x - this.x, object.y - this.y);
     direction.normalize();
     direction.mult(mult);
-    if (!objectCamera.moving) {
       this.x += direction.x;
-    }
     this.y += direction.y;
   }
   public void takeDamage(){

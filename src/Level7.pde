@@ -11,7 +11,7 @@ public class Level7 extends Level {
     text("You Win!", 100, 100);
     for (Platform e : platformList) {
       e.displayPlatform();
-      e.checkCollision(object);
+      e.checkCollision(player);
       if (e.death && e.collided) {
         reset();
         return;

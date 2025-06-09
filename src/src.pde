@@ -1,21 +1,21 @@
 boolean flyHacks = false;
-Player object = new Player(300, 300);
+Player player = new Player(300, 300);
 ArrayList<Level> levelList = new ArrayList<Level>();
-Camera objectCamera;
+Camera playerCamera;
 Level currentLevel;
 int index = 0;
 int cooldown = 0;
 void setup() {
   size(1500, 800);
-  levelList.add(new Level0(object));
-  levelList.add(new Level1(object));
-  levelList.add(new Level2(object));
-  levelList.add(new Level3(object));
-  levelList.add(new Level4(object));
-  levelList.add(new Level5(object));
-  levelList.add(new Level6(object));
-  levelList.add(new Level7(object));
-  objectCamera = new Camera(object, levelList.get(0).platformList, levelList.get(0).enemyList);
+  levelList.add(new Level0(player));
+  levelList.add(new Level1(player));
+  levelList.add(new Level2(player));
+  levelList.add(new Level3(player));
+  levelList.add(new Level4(player));
+  levelList.add(new Level5(player));
+  levelList.add(new Level6(player));
+  levelList.add(new Level7(player));
+  playerCamera = new Camera(player, levelList.get(0).platformList, levelList.get(0).enemyList);
   currentLevel = levelList.get(0);
 }
 void draw() {
@@ -27,32 +27,32 @@ void draw() {
   text("Current Level: " + index, 10, 30);
   }
   if (currentLevel.end()) {
-    object.weapon.bullets.clear();
+    player.weapon.bullets.clear();
     index++;
     if(index != 9){
     currentLevel = levelList.get(index);
     }
     currentLevel.reset();
-    objectCamera = new Camera(object, currentLevel.platformList, currentLevel.enemyList);
-    object.giveWeapon(currentLevel.platformList);
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
   }
-  object.dx = 0;
+  player.dx = 0;
   if (flyHacks) {
-    object.dy = 0;
-    if (wPressed) object.dy = -5;
-    if (sPressed) object.dy = 5;  
-    if (aPressed) object.dx = -5;
-    if (dPressed) object.dx = 5;
+    player.dy = 0;
+    if (wPressed) player.dy = -5;
+    if (sPressed) player.dy = 5;  
+    if (aPressed) player.dx = -5;
+    if (dPressed) player.dx = 5;
   }
   else {
-    if (wPressed && object.dy == 0) object.dy = -10;
-    if (aPressed) object.dx = -5;
-    if (dPressed) object.dx = 5;  
+    if (wPressed && player.dy == 0) player.dy = -10;
+    if (aPressed) player.dx = -5;
+    if (dPressed) player.dx = 5;  
   }
 
-  object.displayPlayer();
+  player.displayPlayer();
   currentLevel.updateLevel();
-  objectCamera.moveCamera();
+  playerCamera.moveCamera();
   cooldown -= 1;
 }
 boolean wPressed = false;
@@ -64,15 +64,71 @@ void keyPressed() {
   if (key == 's' || key == 'S') sPressed = true;
   if (key == 'a' || key == 'A') {
     aPressed = true;
-    object.movingLeft = true;
+    player.movingLeft = true;
   }
   if (key == 'd' || key == 'D') {
     dPressed = true;
-    object.movingRight = true;
+    player.movingRight = true;
   }
   if (key == 'r' || key == 'R') {
     currentLevel.reset();
-    object.dy = -0.1;
+    player.dy = -0.1;
+  }
+    if (key == '0') {
+    index = 0;
+    currentLevel = levelList.get(0);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
+    }
+      if (key == '1') {
+    index = 1;
+    currentLevel = levelList.get(1);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
+  }
+    if (key == '2') {
+    index = 2;
+    currentLevel = levelList.get(2);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
+  }
+    if (key == '3') {
+    index = 3;
+    currentLevel = levelList.get(3);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
+  }
+    if (key == '4') {
+    index = 4;
+    currentLevel = levelList.get(4);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
+  }
+    if (key == '5') {
+    index = 5;
+    currentLevel = levelList.get(5);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
+  }
+    if (key == '6') {
+    index = 6;
+    currentLevel = levelList.get(6);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
+  }
+    if (key == '7') {
+    index = 7;
+    currentLevel = levelList.get(7);
+    currentLevel.reset();
+    playerCamera = new Camera(player, currentLevel.platformList, currentLevel.enemyList);
+    player.giveWeapon(currentLevel.platformList);
   }
 }
 
@@ -81,11 +137,11 @@ void keyReleased() {
   if (key == 's' || key == 'S') sPressed = false;
   if (key == 'a' || key == 'A') {
     aPressed = false;
-    object.movingLeft = false;
+    player.movingLeft = false;
   }
   if (key == 'd' || key == 'D') {
     dPressed = false;
-    object.movingRight = false;
+    player.movingRight = false;
   }
   if (key == 'f' || key == 'F')  flyHacks = !flyHacks;
 }
@@ -93,8 +149,8 @@ void keyReleased() {
 int timer = 0;
 
 void mousePressed() {
-  if (object.weapon != null && cooldown <= 0) {
-    object.weapon.shoot();
-    cooldown = 50;
+  if (player.weapon != null && cooldown <= 0) {
+    player.weapon.shoot();
+    cooldown = 30;
   }
 }

@@ -12,12 +12,12 @@ public class Level5 extends Level {
     enemyList.clear();
     
     platformList.add(new Platform(0, 600, 2000, 20));
-    platformList.add(new KillPlatform(100, 400, 1800, 30));
+    platformList.add(new KillPlatform(100, 200, 1800, 30));
     //enemy at (850, 400);
-    enemyList.add(new GhostEnemy(50, 550, player, platformList));
+    enemyList.add(new GhostEnemy(50, 500, player, platformList));
     enemyList.add(new RangeEnemy(600, 550, player, platformList));
-    enemyList.add(new RangeEnemy(800, 550, player, platformList));
     enemyList.add(new RangeEnemy(1000, 550, player, platformList));
+    enemyList.add(new RangeEnemy(1400, 550, player, platformList));
     this.end = new EndPlatform(1900, 550, 100, 100);
     
     

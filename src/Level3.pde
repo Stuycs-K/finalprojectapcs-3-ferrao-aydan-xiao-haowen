@@ -16,7 +16,6 @@ public class Level3 extends Level {
     enemyList.add(new GhostEnemy(600, 550, player, platformList));
     
     platformList.add(new Platform(1000, 450, 100, 20));
-    enemyList.add(new RangeEnemy(1000, 400, player, platformList));
     
     this.end = new EndPlatform(1500, 450, 150, 100);
     platformList.add(end);
