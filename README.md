@@ -5,19 +5,17 @@ This is a platformer that is similar to the 3D platformer "Neon White"
 
 This game is a normal platformer where the player has a gun that can shoot and the player has to reach the end to go to the next level
 
-There are enemies that shoot at you and can kill you if they hit you (IN DEVELOPMENT)
+There are enemies that shoot at you and can kill you if they hit you
 
-You are able to shoot the enemy and kill them. Some enemy give you a movement boost if you kill them (IN DEVELOPMENT)
+You are able to shoot the enemy and kill them.
 
-Red enemy: normal enemy
+Yellow enemy: gives you extra jump when you kill him
 
-Yellow enemy: gives you extra jump
-
-Blue enemy: gives you dash
+Red enemy: Ranged enemy that fires bullets
 
 Time mechanic to get a best time (IN DEVELOPMENT)
 
-Level selector (IN DEVELOPMENT)
+Level selector from 0 - 7
 
 ###
 
@@ -34,6 +32,6 @@ Use WAD to move around:
 
 (R): Reset level
 
-(M2): Shoot bullets / Mouse
+(M2): Shoot bullets
   
 You can stick to ceilings by holding down (W) !!!
