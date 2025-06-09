@@ -18,7 +18,7 @@ public class Level3 extends Level {
     platformList.add(new Platform(1000, 450, 100, 20));
     enemyList.add(new RangeEnemy(1000, 400, player, platformList));
     
-    this.end = new EndPlatform(2000, 450, 150, 100);
+    this.end = new EndPlatform(1500, 450, 150, 100);
     platformList.add(end);
     player.x = 100;
     player.y = 550;

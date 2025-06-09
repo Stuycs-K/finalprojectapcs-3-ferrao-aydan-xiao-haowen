@@ -16,6 +16,15 @@ public class Player {
     y = ycor;
   }
   
+  public void dash(){
+    if(lookingRight){
+      dx = 200;
+    } else if (lookingLeft){
+      dx = -200;
+    }
+  }
+  
+  
   public void giveWeapon(ArrayList<Platform> platforms){
     weapon = new Weapon(this, platforms);
   }

@@ -45,6 +45,7 @@ public void updateLevel() {
   
   if (resetNeeded) {
     reset();
+    player.weapon.bullets.clear();
   }
 }
 

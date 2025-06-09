@@ -39,7 +39,7 @@ public class RangeEnemy extends Enemy {
     for (int i = bullets.size() - 1; i >= 0; i--) {
       Bullet b = bullets.get(i);
       if (dist(b.pos.x, b.pos.y, this.x, this.y) < 25) {
-        object.dx = (object.x < this.x) ? -15 : 15;
+        object.dash();
         bullets.remove(i);
         health--;
       }

@@ -9,13 +9,29 @@ public class Level4 extends Level {
   //Real level that you need to win.
   public void reset() {
     platformList.clear();
-    platformList.add(new Platform(0, 550, 1200, 50));
-    platformList.add(new Platform(800, 400, 200, 20));
+    enemyList.clear();
+    
+    platformList.add(new Platform(0, 600, 200, 20));
+    enemyList.add(new GhostEnemy(300, 550, player, platformList));
+
+    platformList.add(new Platform(600, 600, 200, 20));
+    enemyList.add(new GhostEnemy(700, 550, player, platformList));
     //enemy at (850, 400);
-    this.end = new EndPlatform(820, 300, 150, 100);
+    platformList.add(new Platform(1200, 600, 200, 20));
+    enemyList.add(new GhostEnemy(1300, 550, player, platformList));
+    enemyList.add(new RangeEnemy(1300, 550, player, platformList));
+    
+    platformList.add(new Platform(1800, 600, 200, 20));
+    enemyList.add(new GhostEnemy(1900, 550, player, platformList));
+    
+    platformList.add(new Platform(2400, 600, 200, 20));
+    enemyList.add(new GhostEnemy(2500, 550, player, platformList));
+  
+    this.end = new EndPlatform(3000, 550, 150, 100);
     platformList.add(end);
-    player.x = 300;
-    player.y = 300;
+    
+    player.x = 50;
+    player.y = 550;
     player.giveWeapon(this.platformList);
   }
   

@@ -36,9 +36,7 @@ void draw() {
     objectCamera = new Camera(object, currentLevel.platformList, currentLevel.enemyList);
     object.giveWeapon(currentLevel.platformList);
   }
-  
   object.dx = 0;
-  
   if (flyHacks) {
     object.dy = 0;
     if (wPressed) object.dy = -5;

@@ -9,13 +9,21 @@ public class Level5 extends Level {
   //Real level
   public void reset() {
     platformList.clear();
-    platformList.add(new Platform(0, 550, 1200, 50));
-    platformList.add(new Platform(800, 400, 200, 20));
+    enemyList.clear();
+    
+    platformList.add(new Platform(0, 600, 2000, 20));
+    platformList.add(new KillPlatform(100, 400, 1800, 30));
     //enemy at (850, 400);
-    this.end = new EndPlatform(820, 300, 150, 100);
+    enemyList.add(new GhostEnemy(50, 550, player, platformList));
+    enemyList.add(new RangeEnemy(600, 550, player, platformList));
+    enemyList.add(new RangeEnemy(800, 550, player, platformList));
+    enemyList.add(new RangeEnemy(1000, 550, player, platformList));
+    this.end = new EndPlatform(1900, 550, 100, 100);
+    
+    
     platformList.add(end);
-    player.x = 300;
-    player.y = 300;
+    player.x = 150;
+    player.y = 550;
     player.giveWeapon(this.platformList);
   }
   
