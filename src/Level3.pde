@@ -1,7 +1,7 @@
 public class Level3 extends Level {
   boolean createLevel = true;
   public Level3(Player thing) {
-    this.object = thing;
+    this.player = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
     reset();
   }
@@ -9,14 +9,20 @@ public class Level3 extends Level {
   //Introduce different enemies
   public void reset() {
     platformList.clear();
-    platformList.add(new Platform(0, 550, 1200, 50));
-    platformList.add(new Platform(800, 400, 200, 20));
-    //enemy at (850, 400);
-    this.end = new EndPlatform(820, 300, 150, 100);
+    enemyList.clear();
+    
+    platformList.add(new Platform(0, 600, 500, 20));
+    platformList.add(new Platform(600, 300, 100, 20));
+    enemyList.add(new GhostEnemy(600, 550, player, platformList));
+    
+    platformList.add(new Platform(1000, 450, 100, 20));
+    enemyList.add(new RangeEnemy(1000, 400, player, platformList));
+    
+    this.end = new EndPlatform(2000, 450, 150, 100);
     platformList.add(end);
-    object.x = 300;
-    object.y = 300;
-    object.giveWeapon(this.platformList);
+    player.x = 100;
+    player.y = 550;
+    player.giveWeapon(this.platformList);
   }
   
   public int getLevelint(){

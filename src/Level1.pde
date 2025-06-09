@@ -1,6 +1,6 @@
 public class Level1 extends Level {
   public Level1(Player thing) {
-    this.object = thing;
+    this.player = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
   }
 //Purpose:
@@ -16,8 +16,8 @@ public class Level1 extends Level {
     platformList.add(new Platform(1300, 580, 200, 10));
     this.end = new EndPlatform(1400, 400, 150, 100);
     platformList.add(end);
-    object.x = 0;
-    object.y = 500;
+    player.x = 0;
+    player.y = 500;
   }
   
    public int getLevelint(){

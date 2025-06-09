@@ -7,6 +7,7 @@ public abstract class Enemy {
   int health;
   boolean death = false;
   Player object;
+  boolean wasHit = false;
   ArrayList<Platform> platforms;
   public Enemy(float xcor, float ycor, int health, Player thing, ArrayList<Platform> stuff) {
     x = xcor;
@@ -37,16 +38,7 @@ public abstract class Enemy {
     dy += gravity;
   }
   
-  public void takeDamage() {
-    ArrayList<Bullet> bullets = object.weapon.bullets;
-    for (int i = bullets.size() - 1; i >= 0; i--) {
-      Bullet boolet = bullets.get(i);
-      if (dist(boolet.pos.x, boolet.pos.y, this.x, this.y) < 25) {
-        health--;
-        bullets.remove(i);
-      }
-    }
-  }
+  public abstract void takeDamage();
 
   
   public abstract void moveEnemy();

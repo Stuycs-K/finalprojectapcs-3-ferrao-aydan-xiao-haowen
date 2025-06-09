@@ -2,7 +2,7 @@ public class Level {
   ArrayList<Platform> platformList = new ArrayList<Platform>();
   ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
   EndPlatform end;
-  Player object;
+  Player player;
 
   public ArrayList<Platform> getList() {
     return platformList;
@@ -17,7 +17,7 @@ public void updateLevel() {
   
   for (Platform e : platformList) {
     e.displayPlatform();
-    e.checkCollision(object);
+    e.checkCollision(player);
     if (e.death && e.collided) {
       resetNeeded = true;
     }

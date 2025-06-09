@@ -1,7 +1,7 @@
 public class Level2 extends Level {
   boolean createLevel = true;
   public Level2(Player thing) {
-    this.object = thing;
+    this.player = thing;
     this.end = new EndPlatform(1000, 500, 100, 100);
   }
   //Purpose:
@@ -13,8 +13,8 @@ public class Level2 extends Level {
     this.end = new EndPlatform(1000, 500, 100, 100);
     platformList.add(end);
        
-    object.x = 150;
-    object.y = 450;
+    player.x = 150;
+    player.y = 450;
     
   }
   public int getLevelint(){

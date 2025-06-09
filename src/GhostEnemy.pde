@@ -4,7 +4,7 @@ public class GhostEnemy extends Enemy {
     super(xcor, ycor, 1, thing, stuff);
   }
   public void displayEnemy() {
-    fill(255, 100, 100);
+    fill(255, 255, 100);
     ellipse(x, y, 50, 50);
     fill(0);
     if(object.x > this.x) {
@@ -28,6 +28,18 @@ public class GhostEnemy extends Enemy {
       this.x += direction.x;
     }
     this.y += direction.y;
+  }
+  public void takeDamage(){
+    if (wasHit) return;
+    ArrayList<Bullet> bullets = object.weapon.bullets;
+    for (int i = bullets.size() - 1; i >= 0; i--){
+      Bullet b = bullets.get(i);
+      if (dist(b.pos.x, b.pos.y, this.x, this.y) < 25){
+        object.dy = -10;
+        bullets.remove(i);
+        health--;
+      }
+    }
   }
   
   public void attackPlayer() {

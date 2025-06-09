@@ -3,7 +3,7 @@ public class RangeEnemy extends Enemy {
   int cooldown = 0;
 
   public RangeEnemy(int xcor, int ycor, Player thing, ArrayList<Platform> stuff) {
-    super(xcor, ycor, 3, thing, stuff);
+    super(xcor, ycor, 1, thing, stuff);
   }
   
   public void moveEnemy() {
@@ -29,6 +29,19 @@ public class RangeEnemy extends Enemy {
 
       if (!b.isAlive) {
         bullets.remove(i);
+      }
+    }
+  }
+  
+  public void takeDamage() {
+    if (wasHit) return;
+    ArrayList<Bullet> bullets = object.weapon.bullets;
+    for (int i = bullets.size() - 1; i >= 0; i--) {
+      Bullet b = bullets.get(i);
+      if (dist(b.pos.x, b.pos.y, this.x, this.y) < 25) {
+        object.dx = (object.x < this.x) ? -15 : 15;
+        bullets.remove(i);
+        health--;
       }
     }
   }
